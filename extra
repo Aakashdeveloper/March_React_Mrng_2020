@@ -55,7 +55,81 @@ Step To create package.json
 
 
 //////
-Local package
+Local package/Depencdency/node_modules
 Global package
 React Setup
 
+
+
+///Local package///
+Particuler for one application
+
+//Global Package//
+Installed in system
+> Setup
+> Run
+> Local Build
+* Global Depencdency will not be a part of package.json
+
+
+/******************************
+Step to install local package
+******************************/
+Win/Mac/Linux/Unix
+# Must install NodeJs
+/@@@@@@@@/
+OneTme
+/@@@@@/
+
+Step 1> create package.json in the folder
+
+//Next Time///
+Step2 > Naviagte to the folder where you want to install using cmd/terminal
+Step3 > npm install <packagename> / npm i <packagename> / 
+npm i <packagename> --save / npm i <packagename> --save-dev
+
+**When we get new application
+> npm install
+
+
+/******************************
+Step to install Global package
+******************************/
+#Win
+Step1> Run cmd as admin
+Step2> npm install -g @aakashdeveloper/create-node-app
+
+#Mac/Linux/Unix
+Step1> Open terminal
+Step2> sudo npm install -g @aakashdeveloper/create-node-app
+
+
+/******************************
+Step to Setup React application
+******************************/
+
+#Win
+//One Time//
+Step1> Run cmd as admin
+Step2> npm install -g create-react-app
+
+//Next all time//
+Step3 > Naviagte to the folder where you want to creeate app using cmd/terminal
+Step4 > create-react-app <appname>
+Step5 > cd <appname> 
+Step6 > npm start
+
+#Mac/Linux/Unix
+Step1> Open terminal
+Step2> sudo npm install -g create-react-app
+
+//Next all time//
+Step3 > Naviagte to the folder where you want to creeate app using cmd/terminal
+Step4 > create-react-app <appname>
+Step5 > cd <appname> 
+Step6 > npm start
+
+///
+Walk through
+Building first appliction
+///
