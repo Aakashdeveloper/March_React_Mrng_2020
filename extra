@@ -1,0 +1,61 @@
+https://code.visualstudio.com/ 
+https://github.com/ 
+https://github.com/Aakashdeveloper
+ https://nodejs.org/en/
+
+JavaScript (2days)
+React - 3
+React-Redux -2
+React-Hooks -1
+React-GraphQl-Apollo-1
+React-JWT-1
+(Basic) React-Native- 1
+------------------------
+Production Ready
+(Tomcat,apcha,xamp,NodeJs(MERN))
+Docker
+Nginx
+Testing(Jest,Engym-SAction,Reducer)
+GitHub
+MockApi
+----------Not------------
+Build API (GraphQl,Rest,JWT)
+------------------------
+
+
+
+///////JSON///////
+JSON
+[
+    {
+        name:"a",
+        class:"b"
+    },
+    {
+        name:"a",
+        class:"b"
+    }
+]
+
+
+///////Package.JSON//////
+Starting point
+Description
+package management
+Version control
+
+////////
+Step To create package.json
+///////
+**NodeJs Must be installed
+> Naviagte to the folder using cmd
+> npm init 
+> Answer all Questions
+> type "yes"
+
+
+//////
+Local package
+Global package
+React Setup
+
