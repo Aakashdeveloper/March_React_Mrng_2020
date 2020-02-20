@@ -129,7 +129,34 @@ Step4 > create-react-app <appname>
 Step5 > cd <appname> 
 Step6 > npm start
 
-///
-Walk through
-Building first appliction
-///
+/////Component/////
+> Have it own logic/ html/css 
+> Each page referes as one Component
+> We can also have neseted Component
+
+Functional Component            Class Component
+---------------------------------------------------
+Light as compare to class       Bit Heavy
+Dumb/Dispaly Component          Logic Component
+Cannot Handle State             Can Handle State
+
+State & Props
+
+State=> Is local variable
+
+Component A  ==prop===>   Component B
+State1 = "a"              State2 = ""
+
+
+
+Hooks Component
+
+JSX
+JavaScript XML
+
+
+//////
+Class Component
+Adding Css to Component
+State
+///////
