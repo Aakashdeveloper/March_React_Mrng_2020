@@ -146,3 +146,7 @@ var sum = new Add(1,2);
 ///
 Map
 Filter 
+
+
+0 = false
+1 = true
