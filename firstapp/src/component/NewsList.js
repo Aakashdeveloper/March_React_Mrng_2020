@@ -3,9 +3,9 @@ import React from 'react';
 const NewsList = (props) => {
     console.log("NewsList>>>",props)
 
-    const renderlist = props.datalist.map((data) => {
+    const renderlist = props.datalist.map((data,index) => {
         return(
-            <div>
+            <div key={index}>
                 <h3>{data.title}</h3>
                 <p>{data.feed}</p>
             </div>
@@ -14,7 +14,7 @@ const NewsList = (props) => {
 
     return(
         <React.Fragment>
-            {renderlist}
+        {renderlist}
         </React.Fragment>
     )
 }

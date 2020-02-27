@@ -154,14 +154,11 @@ Hooks Component
 JSX
 JavaScript XML
 
+//Production App//
+npm run build
 
 //////
-filter & map
-Search bar
+Bootstrap(GridBasic Panel jumbotron navbar)
+Details page
 ///////
-
-
-Class
-Id 
-Tag
 

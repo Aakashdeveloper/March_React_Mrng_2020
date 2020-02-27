@@ -12,23 +12,19 @@ class Home extends Component {
             filtered:JSON
         }
     }
-    /*var b = [0,1,2,3,4]
-
-        b.filter((data) => { return data>2})
-        [1,2,3,4]
-    */
-
     filterNews(keywords){
        const output = this.state.news.filter((data) => {
-           return data.title.indexOf(keywords)>-1
+           return (data.title.toLowerCase().indexOf(keywords.toLowerCase())>-1 ||
+                   data.feed.toLowerCase().indexOf(keywords.toLowerCase())>-1)
        })
        this.setState({filtered:output})
+
     }
-    
+
     render(){
         return(
             <React.Fragment>
-                <Header/>
+                <Header userText={(userInput)=>{this.filterNews(userInput)}}/>
                 <NewsList datalist={this.state.filtered}/>
             </React.Fragment>
             
@@ -37,3 +33,9 @@ class Home extends Component {
 }
 
 export default Home;
+
+
+/*
+add = (a) => {return a+a}
+add(1)
+*/
