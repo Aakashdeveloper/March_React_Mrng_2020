@@ -4,7 +4,8 @@ import {BrowserRouter, Route, Link} from 'react-router-dom';
 import Home from './home'
 import Post from './post';
 import Profile from './profile';
-import PostDetails from './postdetails'
+import PostDetails from './postdetails';
+import Lifecycle from './lifecycle';
 
 const Routing =  () => {
     return(
@@ -25,7 +26,8 @@ const Routing =  () => {
                     <ul className="nav navbar-nav">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/post">Post</Link></li>
-                        <li> <Link to="/profile">Profile</Link></li>
+                        <li><Link to="/profile">Profile</Link></li>
+                        <li><Link to="/lifecycle">Lifecycle</Link></li>
                     </ul>
 
                     </div>
@@ -36,6 +38,7 @@ const Routing =  () => {
             <Route exact path="/post" component={Post}></Route>
             <Route path="/post/:topic" component={PostDetails}></Route>
             <Route path="/profile" component={Profile}></Route>
+            <Route path="/lifecycle" component={Lifecycle}></Route>
         </div>
     </BrowserRouter>
     )
