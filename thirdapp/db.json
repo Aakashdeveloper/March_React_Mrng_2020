@@ -299,17 +299,5 @@
         ]
       }
     }
-  ],
-  "nareshit": [
-    {
-      "id": 1,
-      "course": "React",
-      "duration": 25
-    },
-    {
-      "id": 2,
-      "course": "JavaScript",
-      "duration": 15
-    }
   ]
 }

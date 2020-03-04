@@ -164,3 +164,15 @@ Third React
 
 
 json-server
+json-server --watch db.json --port 8900
+
+
+var a  = 20
+var b = "my age is "+a 
+var c =`my age is ${a}`
+
+
+var a = ''
+if(a){
+
+}
