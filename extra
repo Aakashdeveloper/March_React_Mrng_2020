@@ -5,8 +5,9 @@ https://github.com/Aakashdeveloper
 
 JavaScript (2days)
 React - 3
-React-Redux -2
 React-Hooks -1
+---------------------
+React-Redux -2
 React-GraphQl-Apollo-1
 React-JWT-1
 (Basic) React-Native- 1
@@ -158,8 +159,7 @@ JavaScript XML
 npm run build
 
 //////
-Mock API
-Third React
+
 ///////
 
 
@@ -176,3 +176,8 @@ var a = ''
 if(a){
 
 }
+
+Math.floor(Math.random()*(max-min))+min
+
+react
+react-redux

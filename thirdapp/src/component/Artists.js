@@ -11,7 +11,7 @@ const ArtistList = (props) => {
                 }
                 return(
                     <Link to={`/artist/${item.id}`} className="artist_item"
-                    style={myimage}>
+                    style={myimage} key={item.id}>
                         <div>{item.name}</div>
                     </Link>
                     
