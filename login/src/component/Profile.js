@@ -1,52 +1,61 @@
 import React,{Component} from 'react';
-import Header from './Header';
-import axios from 'axios';
-import Albums from './User';
 
-const url = "http://localhost:8900/artists";
+const url = "http://localhost:5000/api/auth/userinfo";
 
-class ArtistDetails extends Component {
+class Profile extends Component {
     constructor(props){
         super(props)
 
         this.state={
-            details:''
+            user:''
         }
+
+        this.handleLogout = this.handleLogout.bind(this)
+    }
+
+    handleLogout(){
+        localStorage.removeItem('Token')
+        this.props.history.push('/login')
     }
 
     render(){
-        const mydetails = this.state.details;
         return(
             <div>
-                <Header/>
-                <div className="artist_bio">
-                    <div className="artist_image">
-                        <span style={{background:`url('/images/covers/${mydetails.cover}.jpg')`}}></span>
-                        <h3>{mydetails.name}</h3>
-                        <div className="bio_text">
-                            {mydetails.bio}
-                        </div>
+            <div className="container">
+                <div className="panel panel-success">
+                    <div className="panel-heading">
+                        <h3> User Profile</h3>
                     </div>
+                    <div className="panel-body">
+                        <h1>Hi {this.state.user.name}</h1>
+                        <h2>Your email is {this.state.user.email}</h2>
+                    </div>
+                    <button className="btn btn-danger"
+                        onClick={this.handleLogout}>
+                            Logout
+                    </button>
                 </div>
-                <Albums albumsdata={mydetails.albums}/>
             </div>
+        </div> 
         )
     }
 
-    /*componentDidMount(){
-        axios.get(`${url}/${this.props.match.params.id}`)
-        .then((response) => {
-            this.setState({details:response.data})
-        });
-    }*/
-
-    async componentDidMount(){
-        const response = await axios.get(`${url}/${this.props.match.params.id}`)
-        const mydata = response.data
-        this.setState({details:mydata})
+    componentDidMount(){
+        fetch(url,{
+            method:'GET',
+            headers:{
+                'x-access-token':localStorage.getItem('Token')
+            }
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            this.setState({
+                user:data
+            })
+        })
     }
 
 }
 
 
-export default ArtistDetails
+export default Profile;

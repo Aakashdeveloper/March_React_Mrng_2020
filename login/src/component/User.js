@@ -1,20 +1,38 @@
-import React from 'react';
+import React,{Component, Fragment} from 'react';
+import UserDisplay from './UserDisplay';
 
-const Albums = (props) => {
-    const showAlbums = ({albumsdata}) => {
-        if(albumsdata){
-            return albumsdata.map((item) => {
-                return(
-                    <img src={`/images/albums/${item.cover}.jpg`}/>
-                )
-            })
+const url="http://localhost:5000/api/auth/users";
+
+class UserList extends Component {
+    constructor(){
+        super()
+
+        this.state={
+            users:''
         }
     }
-    return(
-        <div className="album_list">
-            {showAlbums(props)}
-        </div>
-    )
+
+    render(){
+        return(
+            <Fragment>
+                <UserDisplay userData={this.state.users}/>
+            </Fragment>
+        )
+    }
+
+    componentDidMount(){
+        fetch(url,{
+            method:'GET'
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            this.setState({
+                users:data
+            })
+        })
+    }
+
 }
 
-export default Albums;
+
+export default UserList;

@@ -1,39 +1,30 @@
 import React,{Component} from 'react';
-import Header from './Header';
 
-const url = "http://localhost:8900/artists"
+const url = "http://localhost:5000/api/auth/login"
 class FormsComponent extends Component {
     constructor(){
         super()
 
         this.state={
-            name:'',
-            cover:'',
-            bio:''
+            email:'',
+            password:''
         }
 
-        this.handleChangeName = this.handleChangeName.bind(this);
-        this.handleChangeCover = this.handleChangeCover.bind(this);
-        this.handleChangeBio = this.handleChangeBio.bind(this);
+        this.handleChangeEmail = this.handleChangeEmail.bind(this);
+        this.handleChangePassword = this.handleChangePassword.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChangeName(event){
-        this.setState({name:event.target.value})
+    handleChangeEmail(event){
+        this.setState({email:event.target.value})
     }
-    handleChangeCover(event){
-        this.setState({cover:event.target.value})
-    }
-    handleChangeBio(event){
-        this.setState({bio:event.target.value})
+    handleChangePassword(event){
+        this.setState({password:event.target.value})
     }
     handleSubmit(){
-        var random = Math.floor(Math.random()*10000);
         var data={
-            "id":random,
-            "name":this.state.name,
-            "cover":this.state.cover,
-            "bio":this.state.bio
+            "email":this.state.email,
+            "password":this.state.password
         }
 
         fetch(url,{
@@ -44,40 +35,37 @@ class FormsComponent extends Component {
             },
             body:JSON.stringify(data)
         })
-        .then(this.props.history.push('/'))
+        .then((res) => res.json())
+        .then((data) => {
+            localStorage.setItem('Token',data.token)
+            this.props.history.push('/profile')
+        })
     }
 
 
     render(){
         return(
             <React.Fragment>
+
                 <div className="container">
-                    <div className="panel panel-primary">
+                    <div className="panel panel-success">
                         <div className="panel-heading">
                             Login Forms
                         </div>
                         <div className="panel-body">
                             <div className="form-group">
-                                <label>Name</label>
+                                <label>Email</label>
                                 <input type="text" className="form-control"
-                                value={this.state.name}
-                                onChange={this.handleChangeName}/>
+                                value={this.state.email}
+                                onChange={this.handleChangeEmail}/>
                             </div>
                         </div>
                         <div className="panel-body">
                             <div className="form-group">
-                                <label>Cover</label>
+                                <label>Password</label>
                                 <input type="text" className="form-control"
-                                value={this.state.cover}
-                                onChange={this.handleChangeCover}/>
-                            </div>
-                        </div>
-                        <div className="panel-body">
-                            <div className="form-group">
-                                <label>Bio</label>
-                                <input type="text" className="form-control"
-                                value={this.state.bio}
-                                onChange={this.handleChangeBio}/>
+                                value={this.state.password}
+                                onChange={this.handleChangePassword}/>
                             </div>
                         </div>
                         <button className="btn btn-success"
