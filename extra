@@ -2,23 +2,24 @@ https://code.visualstudio.com/ 
 https://github.com/ 
 https://github.com/Aakashdeveloper
  https://nodejs.org/en/
+90% - 10%
 
 JavaScript (2days)
 React - 3
 React-Hooks -1
 React-Redux -2
+React-Redux-Saga-1
 React-GraphQl-Apollo-1
 React-JWT-1
 (Basic) React-Native- 1
----------------------
+GitHub
+MockApi
 Production Ready
 (Tomcat,apcha,xamp,NodeJs(MERN))
 Docker
 Nginx
+---------------------
 Testing(Jest,Engym-SAction,Reducer)
-GitHub
-MockApi
-
 ----------Not------------
 Build API (GraphQl,Rest,JWT)
 ------------------------
@@ -202,3 +203,51 @@ npm i apollo-boost graphql-tag graphql react-apollo
 /******UserInfo*****/
 (GET) => http://localhost:5000/api/auth/userinfo
 (Header) => {'x-access-token':'token value from login'}
+
+
+/*****************
+For React Native
+****************/
+npm i -g create-react-native-app
+
+
+/******
+Nginx
+******/
+#HTTP
+server {
+        listen       8081;
+        server_name  localhost;
+
+        location / {
+	    root   /var/www/react-app;
+        index  index.html index.htm;
+        }
+    }
+# HTTPS server
+    #
+    #server {
+    #    listen       443 ssl;
+    #    server_name  localhost;
+
+    #    ssl_certificate      cert.pem;
+    #    ssl_certificate_key  cert.key;
+
+    #    ssl_session_cache    shared:SSL:1m;
+    #    ssl_session_timeout  5m;
+
+    #    ssl_ciphers  HIGH:!aNULL:!MD5;
+    #    ssl_prefer_server_ciphers  on;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+########
+Docker
+#######
+docker build . -t reactfeb
+docker image ls 
+docker run -p 8086:3000 reactfeb
