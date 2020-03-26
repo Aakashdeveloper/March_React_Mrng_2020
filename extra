@@ -251,3 +251,5 @@ Docker
 docker build . -t reactfeb
 docker image ls 
 docker run -p 8086:3000 reactfeb
+
+npm i enzyme-adapter-react-16  enzyme react-test-renderer

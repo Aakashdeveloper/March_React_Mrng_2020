@@ -5,6 +5,7 @@ const Footer = () => {
         <footer>
             <div>
                 <p>&copy; NareshIT</p>
+                <p></p>
             </div>
         </footer>
     )
